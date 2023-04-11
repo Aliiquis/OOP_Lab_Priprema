@@ -4,17 +4,14 @@ import java.util.Arrays;
 
 public class Blockchain {
     private Block[] blocks;
-    private int maxBlocks;
     private int size;
 
     public Blockchain(int maxBlocks) {
         this.blocks = new Block[maxBlocks];
-        this.maxBlocks = maxBlocks;
         this.size = 0;
     }
 
     public int add(Block newBlock) {
-        if (size == maxBlocks) return -1;
         if (blocks[0] == null) {
             newBlock.setPrevHash(new byte[]{0});
         } else {

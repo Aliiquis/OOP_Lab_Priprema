@@ -3,20 +3,17 @@ package hr.fer.oop.demo2.blockchain;
 public class Block {
     private byte[] prevHash;
     private String[] transactions;
-    private int maxTransactions;
     private int size;
     private Hasher hasher;
 
     public Block(int maxTransactions) {
         this.transactions = new String[maxTransactions];
-        this.maxTransactions = maxTransactions;
         this.size = 0;
         this.hasher = new SHAHasher();
     }
 
     public Block(int maxTransactions, Hasher hasher) {
         this.transactions = new String[maxTransactions];
-        this.maxTransactions = maxTransactions;
         this.size = 0;
         this.hasher = hasher;
     }
@@ -30,9 +27,6 @@ public class Block {
     }
 
     public int add(String transaction) {
-        if (maxTransactions == 0 || size == maxTransactions) {
-            return -1;
-        }
         transactions[size] = transaction;
         return size++;
     }
