@@ -2,9 +2,9 @@ package hr.fer.oop.demo2.blockchain;
 
 public class Block {
     private byte[] prevHash;
-    private String[] transactions;
+    private final String[] transactions;
     private int size;
-    private Hasher hasher;
+    private final Hasher hasher;
 
     public Block(int maxTransactions) {
         this.transactions = new String[maxTransactions];
@@ -40,6 +40,6 @@ public class Block {
     }
 
     public byte[] hash(byte[] prevHash) {
-        return new SHAHasher().hash(prevHash, this.transactions);
+        return hasher.hash(prevHash, this.transactions);
     }
 }

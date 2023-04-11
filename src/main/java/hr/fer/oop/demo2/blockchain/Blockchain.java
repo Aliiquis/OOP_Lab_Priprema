@@ -3,7 +3,7 @@ package hr.fer.oop.demo2.blockchain;
 import java.util.Arrays;
 
 public class Blockchain {
-    private Block[] blocks;
+    private final Block[] blocks;
     private int size;
 
     public Blockchain(int maxBlocks) {
