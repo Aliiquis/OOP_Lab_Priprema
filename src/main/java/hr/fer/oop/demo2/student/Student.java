@@ -1,8 +1,8 @@
 package hr.fer.oop.demo2.student;
 
-class Student {
-    private String name, surname;
-    private int age;
+public class Student {
+    private final String name, surname;
+    private final int age;
 
     public Student(String name, String surname, int age) {
         super();

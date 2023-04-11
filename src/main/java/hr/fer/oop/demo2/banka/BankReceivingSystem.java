@@ -1,6 +1,6 @@
 package hr.fer.oop.demo2.banka;
 
-class BankReceivingSystem implements ReceivingSystem {
+public class BankReceivingSystem implements ReceivingSystem {
     private boolean employeeBusy;
     private int urgentQueue;
     private int normalQueue;
